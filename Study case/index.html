@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dunia Resep</title>
+</head>
+<body>
+
+    <div class="navbar">
+        <a onclick="showContent('home')">Home</a>
+        <a onclick="showContent('resep')">Resep</a>
+        <a onclick="showContent('about')">About</a>
+    </div>
+
+    <div id="homeContent" class="content">
+        <h1>Selamat Datang di Dunia Resep</h1>
+        <h2>Tentang Kami</h2>
+        <p>Selamat datang di situs resep kami! Di sini, Anda akan menemukan berbagai macam resep lezat dan mudah dibuat untuk memuaskan selera Anda dan keluarga.</p>
+        <p>Kami menyediakan resep-resep tradisional Indonesia hingga masakan internasional yang telah kami kumpulkan dan uji coba. Setiap resep dilengkapi dengan langkah-langkah yang jelas dan mudah diikuti.</p>
+        <h2>Mengapa Memilih Kami?</h2>
+        <ul>
+            <li>Resep yang mudah diikuti</li>
+            <li>Bahan-bahan yang mudah didapat</li>
+            <li>Variasi masakan yang beragam</li>
+            <li>Tips dan trik memasak dari para ahli</li>
+        </ul>
+        <p>Jelajahi halaman Resep kami untuk memulai petualangan kuliner Anda!</p>
+    </div>
+
+    <div id="resepContent" class="recipe-list" style="display:none;">
+        <h1>Daftar Resep</h1>
+        <div class="recipe-item">
+            <img src="foto/nasigoreng.jpg" alt="nasi goreng" width="500px">
+            <h2>Nasi Goreng</h2>
+            <p>Deskripsi: Nasi goreng adalah hidangan nasi yang digoreng dengan berbagai bahan tambahan.</p>
+            <h3>Langkah-langkah:</h3>
+            <ol>
+                <li>Panaskan minyak dalam wajan.</li>
+                <li>Tumis bawang putih hingga harum.</li>
+                <li>Tambahkan nasi dan kecap manis, aduk rata.</li>
+                <li>Masukkan telur orak-arik, aduk hingga matang.</li>
+            </ol>
+        </div>
+
+        <div class="recipe-item">
+            <img src="foto/ayambakar.jpg" alt="ayambakar" width="500px">
+            <h2>Ayam Bakar</h2>
+            <p>Deskripsi: Ayam bakar yang dibumbui dengan rempah-rempah khas, sempurna untuk acara keluarga.</p>
+            <h3>Langkah-langkah:</h3>
+            <ol>
+                <li>Marinasi ayam dengan bumbu selama 30 menit.</li>
+                <li>Panggang ayam di atas bara api hingga matang.</li>
+                <li>Sajikan dengan sambal dan nasi putih.</li>
+            </ol>
+        </div>
+
+        <div class="recipe-item">
+            <img src="foto/sayursop.jpg" alt="sayur sop" width="500px">
+            <h2>Sup Sayur</h2>
+            <p>Deskripsi: Sup sayur segar yang kaya akan gizi dan mudah dibuat.</p>
+            <h3>Langkah-langkah:</h3>
+            <ol>
+                <li>Rebus air dalam panci.</li>
+                <li>Masukkan sayuran dan bumbu, masak hingga sayuran empuk.</li>
+                <li>Sajikan hangat dengan nasi.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+        
+<div id="aboutContent" class="content" style="display: none;">
+    <h1>Tentang Kami</h1>
+    <div class="chef-container">
+        <div class="chef-card">
+            <img src="foto/tegar.jpg" alt="Tegar" width="300px" height="300px">
+            <h2>Chef Muhamad Tegar</h2>
+            <p>Ahli masakan tradisional Indonesia dengan pengalaman lebih dari 15 tahun.</p>
+            <div class="chef-social">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Facebook</a>
+            </div>
+        </div>
+        <div class="chef-card">
+            <img src="foto/ikhsan.jpg" alt="Ikhsan" width="300px" height="300px">
+            <h2>Chef Ikhsan Al-Faridzi</h2>
+            <p>Ahli masakan dunia dengan pengalaman lebih dari 50 tahun</p>
+            <div class="chef-social">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Facebook</a>
+            </div>
+        </div>
+        <div class="chef-card">
+            <img src="foto/fathir.jpg" alt="Al Fathir" width="300px" height="300px">
+            <h2>Chef Al Fathir</h2>
+            <p>Ahli masakan modern dengan keahlian fusion kuliner internasional.</p>
+            <div class="chef-social">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Facebook</a>
+            </div>
+        </div>
+    </div>
+</div>
+         
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+<script>
+    function showContent(contentType) {
+    if (contentType === 'home') {
+        document.getElementById('homeContent').style.display = 'block';
+        document.getElementById('resepContent').style.display = 'none';
+        document.getElementById('aboutContent').style.display = 'none';
+    } else if (contentType === 'resep') {
+        document.getElementById('homeContent').style.display = 'none';
+        document.getElementById('resepContent').style.display = 'block';
+        document.getElementById('aboutContent').style.display = 'none';      
+    } else if (contentType === 'about') {
+        document.getElementById('homeContent').style.display = 'none';
+        document.getElementById('resepContent').style.display = 'none';
+        document.getElementById('aboutContent').style.display = 'block';  
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+    const chefCards = document.querySelectorAll('.chef-card');
+    
+    chefCards.forEach(card => {
+        card.addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        card.addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+});
+
+}
+</script>

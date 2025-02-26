@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Diri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-card">
+            <img src="WIN_20241024_08_44_12_Pro.jpg" alt="Foto Profil" class="profile-image">
+            <h1 id="name">M.ikhsan alfaridzi</h1>
+            <p id="job">Web Developer</p>
+            <p id="bio">Saya seorang pengembang web dengan pengalaman dalam teknologi modern. Mencari tantangan baru di bidang pengembangan aplikasi web.</p>
+
+            <button onclick="editProfile()">Edit Profil</button>
+        </div>
+        
+        <div id="edit-form" class="edit-form">
+            <h2>Edit Profil</h2>
+            <label for="edit-name">Nama:</label>
+            <input type="text" id="edit-name" value="John Doe">
+            
+            <label for="edit-job">Pekerjaan:</label>
+            <input type="text" id="edit-job" value="Web Developer">
+            
+            <label for="edit-bio">Bio:</label>
+            <textarea id="edit-bio">Saya seorang pengembang web dengan pengalaman dalam teknologi modern. Mencari tantangan baru di bidang pengembangan aplikasi web.</textarea>
+            
+            <button onclick="saveProfile()">Simpan</button>
+            <button onclick="cancelEdit()">Batal</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

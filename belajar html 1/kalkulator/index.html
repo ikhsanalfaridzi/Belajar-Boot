@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Deret Aritmatika & Geometri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Kalkulator Deret</h1>
+    <div class="container">
+        <h3>Deret Aritmatika</h3>
+        <input id="a" type="number" placeholder="Suku pertama (a)">
+        <input id="d" type="number" placeholder="Beda (d)">
+        <input id="n" type="number" placeholder="Jumlah suku (n)">
+        <button onclick="hitungAritmatika()">Hitung Jumlah</button>
+        <p class="result" id="hasilAritmatika"></p>
+    </div>
+
+    <div class="container">
+        <h3>Deret Geometri</h3>
+        <input id="a_geo_biasa" type="number" placeholder="Suku pertama (a)">
+        <input id="r_biasa" type="number" placeholder="Rasio (r)">
+        <input id="n_geo" type="number" placeholder="Jumlah suku (n)">
+        <button onclick="hitungGeometriBiasa()">Hitung Jumlah</button>
+        <p class="result" id="hasilGeometriBiasa"></p>
+    </div>
+
+    <div class="container">
+        <h3>Deret Geometri Tak Hingga</h3>
+        <input id="a_geo" type="number" placeholder="Suku pertama (a)">
+        <input id="r" type="number" placeholder="Rasio (r)">
+        <button onclick="hitungGeometriTakHingga()">Hitung Jumlah</button>
+        <p class="result" id="hasilGeometriTakHingga"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

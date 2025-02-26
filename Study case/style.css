@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    cursor: pointer;
+    position: static;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+.content, .recipe-list {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.recipe-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.recipe-item h2 {
+    margin: 0;
+    color: red;
+}
+.recipe-item p {
+    margin: 5px 0;
+    color: #555;
+}
+.recipe-item ol {
+    margin: 10px 0 0 20px;
+}
+.recipe-item img {
+    max-width: 100%;
+    height:auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.card{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    overflow: hidden;
+    width: 900px;
+    .chef-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    
+    .chef-card {
+        width: 150px;
+        height:150px;
+        text-align: center;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .chef-card:hover {
+        transform: scale(1.05);
+    }
+    
+    .chef-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        display: block;
+        margin: 0 auto;
+    }
+    .chef-card img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover; 
+        border-radius: 50%;
+        margin-bottom: 15px;
+        display: block;
+        margin: 0 auto;
+
+    }
+     
+    }
+    .chef-social {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    
+    .social-icon {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        padding: 5px 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .social-icon:hover {
+        background-color: #333;
+        color: white;
+    }
+.navbar a:hover{
+    background-color:rgb(156, 156, 226);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    width: 30px;
+    transition: .2s ease-in-out;
+}
+.chef-container {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+}
+
+.chef-card {
+    margin: 10px; 
+    flex: 1;
+    max-width: 300px;
+    transition: transform 0.2s;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigasi Revolusi Industri</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      position: relative;
+      width: 450px;
+      height: 450px;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .box:hover {
+      transform: scale(1.1);
+      background-color: #45A049;
+    }
+    .center {
+      width: 120px;
+      height: 120px;
+      background-color: #2196F3;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .top { top: 5%; left: 50%; transform: translateX(-50%); }
+    .bottom { bottom: 5%; left: 50%; transform: translateX(-50%); }
+    .left { left: 5%; top: 50%; transform: translateY(-50%); }
+    .right { right: 5%; top: 50%; transform: translateY(-50%); }
+    .top2 { top: 5%; left: calc(50% - 120px); transform: translateX(0); }
+    .top1 { top: 5%; left: calc(50% + 20px); transform: translateX(0); }
+
+    .content {
+      text-align: center;
+      padding: 50px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .color{
+      display: block;
+    padding: 1px 4px;
+    margin: 1px auto;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    outline: none;
+    text-decoration: none;
+    color: #784ba0;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="1.0.html" class="box top top1">Revolusi 1.0</a>
+    <a href="2.0.html" class="box right">Revolusi 2.0</a>
+    <a href="3.0.html" class="box bottom">Revolusi 3.0</a>
+    <a href="4.0.html" class="box left">Revolusi 4.0</a>
+    <div class="center">
+    </li><button class="color" data-aos="fade-up"><a
+      href="https://id.wikipedia.org/wiki/Revolusi_Industri">Sumber Informasi</a></button>
+    </div>
+    <a href="5.0.html" class="box top2">Revolusi 5.0</a>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+</body>
+</html>

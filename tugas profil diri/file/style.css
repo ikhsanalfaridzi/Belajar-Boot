@@ -1,0 +1,32 @@
+.jumbotron{
+    background-color: white;
+    background: linear-gradient(aqua, purple);
+    color: black;
+    padding: 30px;
+    margin: -10px;
+    font-size: 15px;
+    text-align: center;
+}
+.navbar{
+    color: black;
+   background-color:white;
+   background: linear-gradient(purple, aqua); 
+   margin: -10px;
+   padding: 1px;
+   position: relative;
+}
+nav{
+    color: white;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+.Biodata{
+    background-color: white;
+    background:radial-gradient(circle,aqua, purple) ;
+    padding:1px;
+    margin: -5px;   
+}
+.satu{
+    text-align: center;
+}

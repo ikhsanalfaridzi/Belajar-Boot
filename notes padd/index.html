@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Catatan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        app-bar {
+            display: block;
+            background: #6200ea;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            padding: 20px;
+        }
+        note-item {
+            display: block;
+            background: #f3f3f3;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <app-bar>Aplikasi Catatan</app-bar>
+    <note-form></note-form>
+    <div class="container" id="notes-container"></div>
+    <div id="loading" style="display: none; text-align: center;">Loading...</div>
+    
+    <script>
+        class AppBar extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `<slot></slot>`;
+            }
+        }
+        customElements.define('app-bar', AppBar);
+
+        class NoteItem extends HTMLElement {
+            set note(data) {
+                this.innerHTML = `
+                    <h3>${data.title}</h3>
+                    <p>${data.body}</p>
+                    <button onclick="deleteNote('${data.id}')">Hapus</button>
+                `;
+            }
+        }
+        customElements.define('note-item', NoteItem);
+
+        class NoteForm extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `
+                    <form id="note-form">
+                        <input type="text" id="title" placeholder="Judul" required>
+                        <textarea id="body" placeholder="Isi catatan" required></textarea>
+                        <button type="submit">Tambah Catatan</button>
+                    </form>
+                `;
+                this.querySelector('#note-form').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const title = this.querySelector('#title').value;
+                    const body = this.querySelector('#body').value;
+                    await addNote({ title, body });
+                    this.querySelector('#note-form').reset();
+                });
+            }
+        }
+        customElements.define('note-form', NoteForm);
+
+        async function fetchNotes() {
+            document.getElementById('loading').style.display = 'block';
+            try {
+                const response = await fetch('https://notes-api.dicoding.dev/v2/notes');
+                const result = await response.json();
+                renderNotes(result.data);
+            } catch (error) {
+                console.error('Gagal mengambil catatan:', error);
+            }
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        function renderNotes(notes) {
+            const container = document.getElementById('notes-container');
+            container.innerHTML = '';
+            notes.forEach(note => {
+                const noteElement = document.createElement('note-item');
+                noteElement.note = note;
+                container.appendChild(noteElement);
+            });
+        }
+
+        async function addNote(note) {
+            document.getElementById('loading').style.display = 'block';
+            try {
+                await fetch('https://notes-api.dicoding.dev/v2/notes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(note)
+                });
+                fetchNotes();
+            } catch (error) {
+                console.error('Gagal menambahkan catatan:', error);
+            }
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        async function deleteNote(id) {
+            document.getElementById('loading').style.display = 'block';
+            try {
+                await fetch(`https://notes-api.dicoding.dev/v2/notes/${id}`, {
+                    method: 'DELETE'
+                });
+                fetchNotes();
+            } catch (error) {
+                console.error('Gagal menghapus catatan:', error);
+            }
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        fetchNotes();
+    </script>
+</body>
+</html>
